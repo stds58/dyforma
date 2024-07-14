@@ -1,0 +1,27 @@
+{%block content%}
+		<h3>Добавление компании</h3>
+		<form action="" method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+{{ form.as_p }}
+ <br>
+            <fieldset>
+                <legend></legend>
+                {{ head_form.management_form }}
+                {{ head_form.non_form_errors }}
+                {% for form in head_form %}
+                    {{ form.id }}
+                    <div class="inline {{ company_form.prefix }}">
+                        {{ form.f3.errors }}
+                        {{ form.f3.label_tag }}
+                        {{ form.f3 }}
+                        {{ form.f4.errors }}
+                        {{ form.f4.label_tag }}
+                        {{ form.f4 }}
+
+                    </div>
+                {% endfor %}
+            </fieldset>
+
+ <button class="btn btn-primary" type="submit" name="submit">Добавить</button>
+		</form>
+{%endblock%}

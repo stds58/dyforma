@@ -1,0 +1,18 @@
+
+{{ children_formset.management_form }}
+{{ children_formset.non_form_errors }}
+ 
+{% for child_form in children_formset.forms %}
+    {{ child_form }}
+ 
+    {% if child_form.nested %}
+        {{ child_form.nested.management_form }}
+        {{ child_form.nested.non_form_errors }}
+ 
+        {% for nested_form in child_form.nested.forms %}
+            {{ nested_form }}
+        {% endfor %}
+ 
+    {% endif %}
+ 
+{% endfor %}
