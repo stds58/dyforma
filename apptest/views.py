@@ -65,4 +65,8 @@ class PositionView(CreateView):
     success_url = ''
 
 
+class DinamicTableList(ListView):
+    model = Head
+    template_name = 'dinamic_table.html'
+    context_object_name = 'Heads'
 

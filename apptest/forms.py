@@ -6,7 +6,7 @@ from django.forms.models import BaseInlineFormSet
 
 
 #ChildrenFormset = inlineformset_factory(Head, Position, fields = '__all__')
-HeadFormSet = inlineformset_factory(Head, Position, fields = '__all__')
+HeadFormSet = inlineformset_factory(Head, Position, fields = '__all__', extra=10)
 
 # class BaseChildrenFormset(BaseInlineFormSet):
 #     def add_fields(self, form, index):

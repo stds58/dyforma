@@ -1,4 +1,4 @@
-from apptest.views import HeadView, PositionView, HeadList, PositionList  #, manage_children
+from apptest.views import HeadView, PositionView, HeadList, PositionList, DinamicTableList  #, manage_children
 from django.urls import path
 
 
@@ -8,4 +8,5 @@ urlpatterns = [
     path('position/', PositionList.as_view(), name= 'position_list'),
     path('position/create/', PositionView.as_view(), name='position_create'),
     #path('manage_children/create/', manage_children, name='manage_children_create'),
+   path('dinamictable/', DinamicTableList.as_view(), name= 'dinamictable_list'),
 ]

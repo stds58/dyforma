@@ -1,0 +1,64 @@
+
+
+<table class="dowolna_nazwa">
+  <thead>
+    <tr>
+      <th>Numer porządkowy</th>
+      <th>Nazwa epizodu</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>1</td>
+      <td>Epizod numer 1</td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>Epizod numer 2</td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>Epizod numer 3</td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>Epizod numer 4</td>
+    </tr>
+    <tr>
+      <td>5</td>
+      <td>Epizod numer 5</td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<table class="dowolna_nazwa">
+  <tbody id="tbd">
+  </tbody>
+</table>
+<p align="center">Numer: <input type="number" id="liczba"></p>
+<p align="center">Nazwa: <input type="text" id="tekst"></p>
+<p align="center"><button id="myBtn">D o d a j</button></p>
+<hr>
+
+<script>
+    document.getElementById("myBtn").onclick = dodajWiersz;
+
+function dodajWiersz() {
+  var wiersz = document.createElement("tr");
+
+  var tdNumer = document.createElement("td");
+  var val1 = document.getElementById("liczba").value;
+  tdNumer.innerHTML = val1;
+
+  var tdText = document.createElement("td");
+  var val2 = document.getElementById("tekst").value;
+  tdText.innerHTML = val2;
+
+  wiersz.appendChild(tdNumer);
+  wiersz.appendChild(tdText);
+  var dodac = document.getElementById("tbd");
+  dodac.appendChild(wiersz);
+
+}
+    
+</script>
